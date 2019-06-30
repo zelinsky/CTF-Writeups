@@ -1,6 +1,6 @@
 # Crypto
 
-| Categories       					| 
+| Challenges       					| 
 | ----------------------------------------------------- |
 | [Easy RSA 1](Easy-RSA-1/)				|
 | [Old story](Old-Story/)				|

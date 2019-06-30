@@ -1,6 +1,6 @@
 # Misc
 
-| Categories       					| 
+| Challenges       					| 
 | ----------------------------------------------------- |
 | [F4c3b00k](F4c3b00k/)					|
 | [Easy husky](Easy-Husky/)				|

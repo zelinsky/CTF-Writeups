@@ -1,6 +1,6 @@
 # Programming
 
-| Categories       					| 
+| Challenges       					| 
 | ----------------------------------------------------- |
 | [Do you like math?](Do-You-Like-Math/)		|
 | [balls](Balls/)					|

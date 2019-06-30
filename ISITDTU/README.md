@@ -7,5 +7,5 @@
 | [Web](Web/)			|
 | [Pwn](Pwn/)			|
 | [Crypto](Crypto/)		|
-| [Programmin](Programming/)	|
+| [Programming](Programming/)	|
 
