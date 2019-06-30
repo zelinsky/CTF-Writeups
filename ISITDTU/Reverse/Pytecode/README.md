@@ -404,24 +404,24 @@ None
 * ord(flag[0])+52 == ord(flag[-1])
 * ord(flag[-1]-2 == ord(flag[7])
 * flag[0:7] == 'ISITDTU'
-* flag[9] == flag[14] == flag[19] == flag[24] (after filling the rest of the flag in, it's apparent that these should be '_')
+* flag[9] == flag[14] == flag[19] == flag[24] # after filling the rest of the flag in, it's apparent that these should be '_'
 * ord(flag[8]) = 49 (flag[8] == '1')
 * flag[8] == flag[16]
 * flag[10:14] == 'd0nT'
 * int(flag[18]) + int(flag[23] + int(flag[28]) == 9
-* flag[18] == flag[28] (flag[18] == flag[23 == flag[28] == '3')
+* flag[18] == flag[28] # flag[18] == flag[23 == flag[28] == '3'
 * flag[15] == 'L'
-* ord(flag[17])^-10 == -99 (flag[17] == 'k')
+* ord(flag[17])^-10 == -99 # flag[17] == 'k'
 * ord(flag[20])+2 == ord(flag[27])
 * ord(flag[27]) <= 123
 * ord(flag[20]) >= 97
-* ord(flag[27])%100 = 0 (flag[27] == d; flag[20] == b)
+* ord(flag[27])%100 = 0 # flag[27] == d; flag[20] == b
 * flag[25] == 'C'
-* ord(flag[26])%2,3,4 == 0 (ord(flag[26]) is a multiple of 24)
-* flag[26] is a int (flag[26] == '0')
+* ord(flag[26])%2,3,4 == 0 # ord(flag[26]) is a multiple of 24
+* flag[26] is an int # flag[26] == '0'
 * int(flag[23]) == 3
-* flag[22] == flag[13].lower() (flag[22] == 't')
-* sum of ord(i) for i in flag == 2441 (with only one character missing at this point, ord(flag[21]) has to be 58, flag[21] == ':')
+* flag[22] == flag[13].lower() # flag[22] == 't'
+* sum of ord(i) for i in flag == 2441 # with only one character missing at this point, ord(flag[21]) has to be 58; flag[21] == ':'
 ```
 
 
