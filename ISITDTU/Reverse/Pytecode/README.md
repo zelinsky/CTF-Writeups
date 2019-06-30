@@ -1,7 +1,7 @@
 # Pytecode
 
 ### The Challenge
-This reversing challenges was a fun one. We were given a file, [*pytecode*](Pytecode.zip), which contains Python byte code. Byte code is generated from compiling a Python script, and it is loaded into the Python run-time and interpreted by a virtual machine, which is a piece of code that reads each instruction in the byte code and executes whatever operation is indicated.
+This reversing challenges was a fun one. We were given a file, [**pytecode**](Pytecode.zip), which contains Python byte code. Byte code is generated from compiling a Python script, and it is loaded into the Python run-time and interpreted by a virtual machine, which is a piece of code that reads each instruction in the byte code and executes whatever operation is indicated.
 
 The file given contains byte code that is basically checking that certain aspects of the flag are true, and failing if they are false. Once we have all the requirements for the flag, we can figure out what it is.
 
@@ -9,7 +9,7 @@ The byte code is actually pretty easy to read and understand once you get the ha
 
 
 ### Tools and References
-I didn't use any tools for this challenge. I just went through the byte code line by line and reversed it by hand, and I used [*this*](https://docs.python.org/3/library/dis.html) as a reference for the instructions.
+I didn't use any tools for this challenge. I just went through the byte code line by line and reversed it by hand, and I used [**this**](https://docs.python.org/3/library/dis.html) as a reference for the instructions.
 
 
 ### Interpreting the Byte Code
