@@ -1,6 +1,6 @@
 # Reverse
 
-| Categories       					| 
+| Challenges       					| 
 | ----------------------------------------------------- |
 | [Recovery](Recovery/)					|
 | [Pytecode](Pytecode)					|

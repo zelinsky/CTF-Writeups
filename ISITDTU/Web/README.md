@@ -1,6 +1,6 @@
 # Web
 
-| Categories       					| 
+| Challenges       					| 
 | ----------------------------------------------------- |
 | [Rose Garden](Rose-Garden/)				|
 | [XSSgame1](XssGame1/)					|
