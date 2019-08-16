@@ -1,0 +1,13 @@
+otepad--
+500
+
+Written by: arinerron, dns
+
+My friend Kevin made a notepad program that's supposedly invulnerable. He wouldn't give me a copy of it though, so I just intercepted the traffic. And ha! It sends notes in plaintext. I don't understand the protocol though.
+
+I think the version of the program that he's port forwarding is the dev version that has special debug features enabled by the way. That's the kind of thing Kevin would do.
+
+Get me a copy of the program to reverse engineer, or even better, get me a shell.
+
+pcap mirror: https://drive.google.com/open?id=1Lq9_i1ZeH56pVZZVg7WJ8RJtGgFMxlVJ
+
