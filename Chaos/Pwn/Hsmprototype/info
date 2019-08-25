@@ -1,0 +1,15 @@
+hsmprototype
+
+Category: Pwn
+Difficulty: Hard
+Author: Kun (external) & explo1t
+
+You scanned the interwebz for vuln boxes and suddenly:
+
+A wild HSM prototype appeared...
+
+By chance you also found the binary behind the service, but it only contains a PLACEHOLDER masterkey! Can you recover the real key?
+
+Server at: hsm.allesctf.net 4321
+
+firmware-474e4cf3bb0d53cedadf1f884679d186d5a737c4a9be4258b6f210aba2785381.zip

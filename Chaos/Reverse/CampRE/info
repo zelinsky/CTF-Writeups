@@ -1,0 +1,12 @@
+ampRE
+
+Category: Reverse Engineering
+Difficulty: Easy/Medium
+Author: 0x4d5a
+First Blood: dcua
+
+.NET Core is strange. There is no executable, but i'm sure you'll find a way to execute the file anyway. The remaining part of the challenge should be easy :)
+
+CampRE.zip
+
+Update1: We noticed that not every user has a 1337 core CPU and lowered the calculation power a little bit. Should be even more fun now! Please redownload the file.

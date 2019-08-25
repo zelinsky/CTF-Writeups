@@ -1,0 +1,543 @@
+Script started on 2019-08-23 08:15:13-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="206" LINES="55"]
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility ima[K[K[K-f 
+flagconverter.7z   flagconverter.dmp  info               script.txt         
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility -f flagconverter.dmp imageinfo
+Volatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : Win7SP1x64, Win7SP0x64, Win2008R2SP0x64, Win2008R2SP1x64_24000, Win2008R2SP1x64_23418, Win2008R2SP1x64, Win7SP1x64_24000, Win7SP1x64_23418
+                     AS Layer1 : WindowsAMD64PagedMemory (Kernel AS)
+                     AS Layer2 : VirtualBoxCoreDumpElf64 (Unnamed AS)
+                     AS Layer3 : FileAddressSpace (/root/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter/flagconverter.dmp)
+                      PAE type : No PAE
+                           DTB : 0x187000L
+                          KDBG : 0xf800027ff120L
+          Number of Processors : 2
+     Image Type (Service Pack) : 1
+                KPCR for CPU 0 : 0xfffff80002801000L
+                KPCR for CPU 1 : 0xfffff880009eb000L
+             KUSER_SHARED_DATA : 0xfffff78000000000L
+           Image date and time : 2019-08-21 05:55:09 UTC+0000
+     Image local date and time : 2019-08-21 07:55:09 +0200
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility -f flagconverter.dmp imageinfo[K[K[K[K[K[K[K[K[K--profile=Win7SP1x64 pslist
+Volatility Foundation Volatility Framework 2.6
+Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+------------------ -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+0xfffffa8000ca0040 System                    4      0     86      377 ------      0 2019-08-21 05:52:02 UTC+0000                                 
+0xfffffa8002861330 smss.exe                280      4      2       30 ------      0 2019-08-21 05:52:02 UTC+0000                                 
+0xfffffa80027dd700 csrss.exe               364    340      9      355      0      0 2019-08-21 05:52:05 UTC+0000                                 
+0xfffffa8007e4f8e0 wininit.exe             404    340      3       76      0      0 2019-08-21 05:52:05 UTC+0000                                 
+0xfffffa8007eaeb00 csrss.exe               424    412      8      188      1      0 2019-08-21 05:52:05 UTC+0000                                 
+0xfffffa8001d1e060 winlogon.exe            468    412      4      115      1      0 2019-08-21 05:52:05 UTC+0000                                 
+0xfffffa8001d6f820 services.exe            504    404     10      188      0      0 2019-08-21 05:52:05 UTC+0000                                 
+0xfffffa8001d75b00 lsass.exe               520    404      7      484      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001d74710 lsm.exe                 528    404     10      147      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001dbeb00 svchost.exe             640    504     11      354      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001c73060 VBoxService.ex          704    504     14      125      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001f2fb00 svchost.exe             764    504      7      240      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001f71b00 svchost.exe             852    504     21      425      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001f77b00 svchost.exe             908    504     21      435      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001fa2060 svchost.exe             936    504     13      248      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001fc2060 svchost.exe             988    504     34      888      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8001ff9b00 audiodg.exe             304    852      4      114      0      0 2019-08-21 05:52:06 UTC+0000                                 
+0xfffffa8002094200 svchost.exe            1068    504     15      350      0      0 2019-08-21 05:52:07 UTC+0000                                 
+0xfffffa80020ddb00 spoolsv.exe            1208    504     14      292      0      0 2019-08-21 05:52:07 UTC+0000                                 
+0xfffffa80020fd7d0 svchost.exe            1252    504     19      300      0      0 2019-08-21 05:52:07 UTC+0000                                 
+0xfffffa80021a0240 svchost.exe            1352    504     12      150      0      0 2019-08-21 05:52:07 UTC+0000                                 
+0xfffffa8000d48610 taskhost.exe           1828    504      9      172      1      0 2019-08-21 05:52:10 UTC+0000                                 
+0xfffffa80022dfb00 dwm.exe                1900    908      4       76      1      0 2019-08-21 05:52:10 UTC+0000                                 
+0xfffffa800230d910 explorer.exe           1924   1884     24      788      1      0 2019-08-21 05:52:10 UTC+0000                                 
+0xfffffa80023a7640 VBoxTray.exe            960   1924     13      141      1      0 2019-08-21 05:52:11 UTC+0000                                 
+0xfffffa80020c1060 SearchIndexer.         1816    504     13      647      0      0 2019-08-21 05:52:18 UTC+0000                                 
+0xfffffa80024133a0 SearchProtocol         1164   1816      6      272      0      0 2019-08-21 05:52:18 UTC+0000                                 
+0xfffffa8002428710 SearchFilterHo          844   1816      4       95      0      0 2019-08-21 05:52:18 UTC+0000                                 
+0xfffffa800246e530 converter.exe          2308   2280     11      183      1      0 2019-08-21 05:52:25 UTC+0000                                 
+0xfffffa800246fb00 converter.exe          2316   2280     10      152      1      0 2019-08-21 05:52:25 UTC+0000                                 
+0xfffffa8000e06b00 sppsvc.exe             2732    504      6      152      0      0 2019-08-21 05:54:09 UTC+0000                                 
+0xfffffa8000e0b060 svchost.exe            2760    504     12      376      0      0 2019-08-21 05:54:09 UTC+0000                                 
+0xfffffa8002443390 WmiPrvSE.exe           2976    640      8      142      0      0 2019-08-21 05:54:56 UTC+0000                                 
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility -f flagconverter.dmp --profile=Win7SP1x64 pslist[K[K[K[K[K[Kmemdump -l[K[K[K[K[K[K[K[K[K[K^C
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# mkdir dumps
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# mkdir dumpsvolatility -f flagconverter.dmp --profile=Win7SP1x64 pslist[K[K[K[K[K[Kmemdump -p 2308 -d dumps
+Volatility Foundation Volatility Framework 2.6
+ERROR   : volatility.debug    : Please specify a dump directory (--dump-dir)
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility -f flagconverter.dmp --profile=Win7SP1x64 memdump -p 2308 -d dumps[1@-[Cu dumpsm dumpsp dumps- dumpsd dumpsi dumpsr dumps
+Volatility Foundation Volatility Framework 2.6
+************************************************************************
+Writing converter.exe [  2308] to 2308.dmp
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# volatility -f flagconverter.dmp --profile=Win7SP1x64 memdump -p 2308 --dump-dir dumps[1P[1P[1@1[1@6
+Volatility Foundation Volatility Framework 2.6
+************************************************************************
+Writing converter.exe [  2316] to 2316.dmp
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# c[Kstring [Ks dumps/2308.dmp | grep ALLES
+APPDATA=C:\Users\ALLES\AppData\Roaming
+COMPUTERNAME=ALLES-PC
+HOMEPATH=\Users\ALLES
+LOCALAPPDATA=C:\Users\ALLES\AppData\Local
+LOGONSERVER=\\ALLES-PC
+TEMP=C:\Users\ALLES\AppData\Local\Temp
+TMP=C:\Users\ALLES\AppData\Local\Temp
+USERDOMAIN=ALLES-PC
+USERNAME=ALLES
+USERPROFILE=C:\Users\ALLES
+C:\Users\ALLES\Desktop\1\converter.exe 
+C:\Users\ALLES\Desktop\1\converter.exe
+C:\Users\ALLES\Desktop\1\converter.exe
+c:\Users\ALLES\AppData\Local\Microsoft\windows
+c:\Users\ALLES\AppData\Roaming\microsoft
+c:\Users\ALLES\AppData\Local\Microsoft\windows
+c:\Users\ALLES\AppData\Roaming\Microsoft\windows
+Users\ALLES\AppData\Local\GDIPFONTCACHEV1.DAT
+C:\Users\ALLES\Desktop\1\converter.exe
+C:\Users\ALLES\Desktop\1\converter.exe 
+c:\Users\ALLES\desktop
+c:\Users\ALLES\appdata
+c:\Users\ALLES\AppData\local
+ALLES\AppData\Local\Microsoft
+C:\Users\ALLES\Desktop\1\converter.exe
+c:\Users\ALLES\appdata
+c:\Users\ALLES\AppData\local
+c:\Users\ALLES\AppData\Local\microsoft
+c:\Users\ALLES\appdata
+c:\Users\ALLES\AppData\roaming
+c:\Users\ALLES\appdata
+c:\Users\ALLES\AppData\local
+c:\Users\ALLES\AppData\Local\microsoft
+c:\Users\ALLES\appdata
+C:\Users\ALLES\Desktop\1\converter.exe
+c:\Users\ALLES\appdata
+C:\Users\ALLES\AppData\Local\Microsoft\Windows\Temporary Internet Files\
+APPDATA=C:\Users\ALLES\AppData\Roaming
+TEMP=C:\Users\ALLES\AppData\Local\Temp
+TMP=C:\Users\ALLES\AppData\Local\Temp
+USERPROFILE=C:\Users\ALLES
+LOGONSERVER=\\ALLES-PC
+HOMEPATH=\Users\ALLES
+COMPUTERNAME=ALLES-PC
+USERDOMAIN=ALLES-PC
+USERNAME=ALLES
+COMPUTERNAME=ALLES-PC
+HOMEPATH=\Users\ALLES
+LOGONSERVER=\\ALLES-PC
+USERDOMAIN=ALLES-PC
+USERNAME=ALLES
+C:\Users\ALLES\Desktop\1\converter.exe
+LOCALAPPDATA=C:\Users\ALLES\AppData\Local
+LOCALAPPDATA=C:\Users\ALLES\AppData\Local
+APPDATA=C:\Users\ALLES\AppData\Roaming
+TEMP=C:\Users\ALLES\AppData\Local\Temp
+TMP=C:\Users\ALLES\AppData\Local\Temp
+USERPROFILE=C:\Users\ALLES
+APPDATA=C:\Users\ALLES\AppData\Roaming
+COMPUTERNAME=ALLES-PC
+HOMEPATH=\Users\ALLES
+LOCALAPPDATA=C:\Users\ALLES\AppData\Local
+LOGONSERVER=\\ALLES-PC
+TEMP=C:\Users\ALLES\AppData\Local\Temp
+TMP=C:\Users\ALLES\AppData\Local\Temp
+USERDOMAIN=ALLES-PC
+USERNAME=ALLES
+USERPROFILE=C:\Users\ALLES
+APPDATA=C:\Users\ALLES\AppData\Roaming
+COMPUTERNAME=ALLES-PC
+HOMEPATH=\Users\ALLES
+LOCALAPPDATA=C:\Users\ALLES\AppData\Local
+LOGONSERVER=\\ALLES-PC
+TEMP=C:\Users\ALLES\AppData\Local\Temp
+TMP=C:\Users\ALLES\AppData\Local\Temp
+USERDOMAIN=ALLES-PC
+USERNAME=ALLES
+USERPROFILE=C:\Users\ALLES
+C:\Users\ALLES\Desktop\1\converter.exe
+C:\Users\ALLES\Desktop\1\converter.exe
+ALLES{f0r3n51k_15_50m3t1m35_t00_345y}
+ALLES{f0r3n51k_15_50m3t1m35_t00_345y}
+ALLES
+ALLES-PC
+C:\Users\ALLES\Desktop\1\converter.exe
+C:\Users\ALLES\Desktop\1\converter.exe
+C:\Users\ALLES\Desktop\1\converter.exe
+ALLES-PC
+ALLESrk 
+ALLES
+\\ALLES-PC
+C:\Users\ALLES\Favorites\Links for United States\USA.gov.url
+C:\Users\ALLES\Favorites\Links for United States\GobiernoUSA.gov.url
+C:\Users\ALLES\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Internet Explorer.lnk
+C:\Users\ALLES\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Windows Explorer.lnk
+C:\Users\ALLES\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Windows Media Player.lnk
+ALLES
+ALLES
+ALLES
+start C:\Users\ALLES\Desktop\1\converter.exe
+start C:\Users\ALLES\Desktop\3\converter.exeexe"
+ALLES
+ALLES-PC
+ALLES-PC
+
+
+Script started on 2019-08-23 08:35:06-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="206" LINES="55"]
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# strings dumps/* | grep encrypt
+/* This is an independent implementation of the encryption algorithm:   */
+m_encryptindex
+encrypted
+Making signature buffer (encrypt = %d) with nonce 0x%I64x
+amd64_microsoft-windows-encryptfilesonmove-adm_31bf3856ad364e35_none_b9d72a93768324abk
+amd64_microsoft-windows-volumeencryption-adm_31bf3856ad364e35_none_0150e6bcb1c3fb20
+encryptOrDecrypt
+m_encryptor
+m_encryptKeyExpansion
+m_encryptindex
+encryptMode
+encryptindex
+encryptKeyExpansion
+encryptedData
+encrypted
+Making signature buffer (encrypt = %d) with nonce 0x%I64x
+amd64_microsoft-windows-encryptfilesonmove-adm_31bf3856ad364e35_none_b9d72a93768324abk
+amd64_microsoft-windows-volumeencryption-adm_31bf3856ad364e35_none_0150e6bcb1c3fb20
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# strings dumps/* | grep encrypt-encryptAencrypt[1PencryptBencrypt encrypt1encrypt0encrypt encrypt-encryptAencrypt encrypt1encrypt5encrypt encrypt[C[C[C[C[C[C[Cion[C[C[C[C[C[C[C
+2.16.840.1.101.3.4.1.42
+1.3.6.1.4.1.13085.1.19
+1.3.6.1.4.1.13085.1.20
+1.3.6.1.4.1.13085.1.21
+2.16.840.1.101.3.4.1.3
+2.16.840.1.101.3.4.1.23
+2.16.840.1.101.3.4.1.43
+2.16.840.1.101.3.4.1.5
+2.16.840.1.101.3.4.1.25
+2.16.840.1.101.3.4.1.45
+/* This is an independent implementation of the encryption algorithm:   */
+/*                                                                      */
+/*         RIJNDAEL by Joan Daemen and Vincent Rijmen                   */
+/*                                                                      */
+/* which is a candidate algorithm in the Advanced Encryption Standard   */
+/* programme of the US National Institute of Standards and Technology.  */
+/*                                                                      */
+/* Copyright in this implementation is held by Dr B R Gladman but I     */
+/* hereby give permission for its free direct or derivative use subject */
+/* to acknowledgment of its origin and compliance with any conditions   */
+/* that the originators of the algorithm place on its exploitation.     */
+/*                                                                      */
+/* Dr Brian Gladman (gladman@seven77.demon.co.uk) 14th January 1999     */
+TRijndael_ECB
+SsRijndael
+TRijndael_CFB
+--
+wow64_microsoft-windows-ehome-ehdebug_31bf3856ad364e35_none_c3a9b03366e596d86
+6.1.7600.16385
+amd64_microsoft-windows-n..tions-adm.resources_31bf3856ad364e35_en-us_1f67c39dc7ee4c911
+6.1.7600.16385
+amd64_srpuxsnapin.general_31bf3856ad364e35_none_e6d8641781b7d5d2
+6.1.7600.16385
+amd64_microsoft-windows-sidebar-adm.resources_31bf3856ad364e35_en-us_a1777d9c28b7d96a
+6.1.7600.163856
+x86_microsoft-windows-g..tallation.resources_31bf3856ad364e35_en-us_aebed17aa135606c
+6.1.7600.16385
+amd64_microsoft-windows-volumeencryption-adm_31bf3856ad364e35_none_0150e6bcb1c3fb20
+6.1.7600.163855
+amd64_microsoft-windows-e..gadgetxml.resources_31bf3856ad364e35_en-us_1426191acd704239
+6.1.7600.16385
+amd64_microsoft-windows-help-sniptoo.resources_31bf3856ad364e35_en-us_83163cb3f398f9836
+6.1.7600.163855
+amd64_microsoft-windows-d..quota-adm.resources_31bf3856ad364e35_en-us_36db06e606b0c067
+6.1.7600.16385
+amd64_microsoft-windows-n..ction-adm.resources_31bf3856ad364e35_en-us_f920e2eacb78bd116
+6.1.7600.163855
+hbin
+amd64_microsoft-windows-a..ility-assistant-adm_31bf3856ad364e35_none_a980e127e3051987
+6.1.7600.16385
+amd64_microsoft-windows-windowsdefender-adm_31bf3856ad364e35_none_88e4b2a8582f6317
+6.1.7600.16385
+amd64_microsoft-windows-a..s-windowsbusinessed_31bf3856ad364e35_none_8a53d4b74ac63bdfr
+--
+wow64_microsoft-windows-ehome-ehdebug_31bf3856ad364e35_none_c3a9b03366e596d86
+6.1.7600.16385
+amd64_microsoft-windows-n..tions-adm.resources_31bf3856ad364e35_en-us_1f67c39dc7ee4c911
+6.1.7600.16385
+amd64_srpuxsnapin.general_31bf3856ad364e35_none_e6d8641781b7d5d2
+6.1.7600.16385
+amd64_microsoft-windows-sidebar-adm.resources_31bf3856ad364e35_en-us_a1777d9c28b7d96a
+6.1.7600.163856
+x86_microsoft-windows-g..tallation.resources_31bf3856ad364e35_en-us_aebed17aa135606c
+6.1.7600.16385
+amd64_microsoft-windows-volumeencryption-adm_31bf3856ad364e35_none_0150e6bcb1c3fb20
+6.1.7600.163855
+amd64_microsoft-windows-e..gadgetxml.resources_31bf3856ad364e35_en-us_1426191acd704239
+6.1.7600.16385
+amd64_microsoft-windows-help-sniptoo.resources_31bf3856ad364e35_en-us_83163cb3f398f9836
+6.1.7600.163855
+amd64_microsoft-windows-d..quota-adm.resources_31bf3856ad364e35_en-us_36db06e606b0c067
+6.1.7600.16385
+amd64_microsoft-windows-n..ction-adm.resources_31bf3856ad364e35_en-us_f920e2eacb78bd116
+6.1.7600.163855
+hbin
+amd64_microsoft-windows-a..ility-assistant-adm_31bf3856ad364e35_none_a980e127e3051987
+6.1.7600.16385
+amd64_microsoft-windows-windowsdefender-adm_31bf3856ad364e35_none_88e4b2a8582f6317
+6.1.7600.16385
+amd64_microsoft-windows-a..s-windowsbusinessed_31bf3856ad364e35_none_8a53d4b74ac63bdfr
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# strings dumps/* | grep -B 10 -A 15 encryption[1P encryption[1P encryption[1Pencryption[1P encryption[1P encryption[1Pencryption[1P encryption[1P encryption[1PencryptionC encryption[1P encryption[1P encryptionC encryption[C encryption1 encryption- encryption[1P encryption0 encryption[C[1Pncryption[1Pcryption[1Pryption[1Pyption[1Pption[1Ption[1Pion[1Pon[1Pn[Knonce
+VMEND
+vm_risc_begin                                                                                                                                                                                                                                                  
+VMBEGIN1
+vm_risc_end                                                                                                                                                                                                                                                    
+VMEND1
+check_protection_begin                                                                                                                                                                                                                                         
+CHCKPRTB
+check_protection_end                                                                                                                                                                                                                                           (
+CHCKPRTE
+run_once_begin                                                                                                                                                                                                                                                 
+runonceB
+run_once_end                                                                                                                                                                                                                                                   
+runonceE
+kernel32.dll
+GetVersionExA
+TMarkers 
+CommonTypes
+TProtectedStrings 
+TEnvironmentVariable
+TTrialStoringType 
+TExecutedProcess(
+TLoadedDriver
+TInstalledService
+--
+```hh`
+xppwpp
+session key to client-to-server sealing key magic constant
+session key to server-to-client sealing key magic constant
+session key to client-to-server signing key magic constant
+session key to server-to-client signing key magic constant
+%0.8x
+channel-binding
+service-name
+hashed-dirs
+nextnonce
+rspauth
+digest-uri
+cipher
+charset
+maxbuf
+opaque
+stale
+domain
+authzid
+hentity
+response
+method
+algorithm
+cnonce
+nonce
+realm
+username
+auth-conf
+auth-int
+auth
+username="%Z",realm="%Z",nonce="%Z",%s="%Z"
+username="%Z",realm="",nonce="%Z",%s="%Z"
+,cnonce="%Z",nc=%Z
+,response=%Z
+,algorithm=MD5-sess,response="%Z"
+,algorithm=MD5,response="%Z"
+,response="%Z"
+,qop=%Z
+,qop="%Z"
+,cipher=%s
+rc4-56
+rc4-40
+3des
+--
+Pku2uGetContextToken Called
+SpQueryContextAttributes Called
+Pku2uImportContext called
+Invalid buffer size for marshalled context: was 0x%x, needed 0x%x
+Failed to insert context: 0x%x
+Pku2uExportContext context %p, flags 0x%x
+Invalid handle supplied for ExportSecurityContext(%p)n
+Pku2uExportContext returned 0x%x
+KERB_WRAP_NO_ENCRYPT flag passed to MakeSignature!
+WSTMakeSignatureToken CFX buffer too small %d, expected %d!
+Making signature buffer (encrypt = %d) with nonce 0x%I64x
+bad token header
+bad token id in the header
+token header too small
+bad EC in token header
+bad filler
+unexpected etype %d
+Failed to load %d crypt system: %#x
+Verifying signature buffer (decrypt = %d) with nonce 0x%I64x, message seq  0x%I64x
+sequence number mismatched
+message not sent by acceptor
+Can't have readonly & readonly_w_checksum
+d:\w7rtm\ds\security\protocols\pku2u\message.cxx
+No signature buffer found. %s, line %d
+no signing context attributes %#x, %s, line %d
+Failed to load %d checksum: 0x%x.
+no signing %#x, %s, line %d
+Failed to verify signature token: %#x
+Failed to load MD5 checksum: %#x
+--
+52b8
+6.1ec7
+6.1.7600.16385
+6.1.7601.17514
+amd64_prnep00c.inf-languagepack_31bf3856ad364e35_en-us_ae7e2002e7b07590_
+6.1.7600.16385
+amd64_infocard.resources_b77a5c561934e089_en-us_871b4a18f02ce36b
+6.1;J
+6.1.7600.16385
+.163Q
+amd64_microsoft-windows-runonce.resources_31bf3856ad364e35_en-us_0de22e9b21d3169d
+6.1;J
+6.1.7600.16385
+x86_microsoft-windows-utilman.resources_31bf3856ad364e35_en-us_b05f80e3084dfe57e
+6.1.7600.16385
+amd64_microsoft-windows-x..ocess-mui.resources_31bf3856ad364e35_en-us_6362399dc0d89d8fgu
+6.1.7600.16385
+x86_microsoft-windows-d..monapijpn.resources_31bf3856ad364e35_en-us_e76012d0f368ef56.res
+6.1.7600.16385
+amd64_microsoft-windows-autoconv.resources_31bf3856ad364e35_en-us_5b4f50a6f6e12ed8ns.res
+6.1.7600.16385
+--
+x86_microsoft-windows-w..deviceapi.resources_31bf3856ad364e35_en-us_8c55ef87314b660c0
+6.1.7600.16385!
+amd64_microsoft-windows-s..repairbde.resources_31bf3856ad364e35_en-us_93f9bd8caf032bc2l
+6.1.7600.16385i
+E8EBCC90469BFE03EA485673BA14799F
+tSDisplayVersion
+x86_microsoft-windows-d..layswitch.resources_31bf3856ad364e35_en-us_1b2e34af3cbd7a77i
+6.1.7600.16385N
+amd64_microsoft-windows-m..ado15-rll.resources_31bf3856ad364e35_en-us_e38f58e3870a40afu
+6.1.7600.16385l
+x86_microsoft-windows-runonce.resources_31bf3856ad364e35_en-us_b1c393176975a567
+6.1.7600.16385
+hbin
+x86_microsoft-windows-msinfo32-exe.resources_31bf3856ad364e35_en-us_619ad638a159cb5dc
+6.1.7600.163856
+amd64_microsoft.backgroun..nt.module.resources_31bf3856ad364e35_en-us_b9460b755ccbf21fi
+6.1.7600.16385r
+6.1.7600.16385
+System.Web.Extensions.Design,3.5.0.0,,31bf3856ad364e35,msil
+amd64_microsoft-windows-i..tbranding.resources_31bf3856ad364e35_en-us_70994e2bce689b50,
+11.2.9600.16428
+--
+```hh`
+xppwpp
+session key to client-to-server sealing key magic constant
+session key to server-to-client sealing key magic constant
+session key to client-to-server signing key magic constant
+session key to server-to-client signing key magic constant
+%0.8x
+channel-binding
+service-name
+hashed-dirs
+nextnonce
+rspauth
+digest-uri
+cipher
+charset
+maxbuf
+opaque
+stale
+domain
+authzid
+hentity
+response
+method
+algorithm
+cnonce
+nonce
+realm
+username
+auth-conf
+auth-int
+auth
+username="%Z",realm="%Z",nonce="%Z",%s="%Z"
+username="%Z",realm="",nonce="%Z",%s="%Z"
+,cnonce="%Z",nc=%Z
+,response=%Z
+,algorithm=MD5-sess,response="%Z"
+,algorithm=MD5,response="%Z"
+,response="%Z"
+,qop=%Z
+,qop="%Z"
+,cipher=%s
+rc4-56
+rc4-40
+3des
+--
+Pku2uGetContextToken Called
+SpQueryContextAttributes Called
+Pku2uImportContext called
+Invalid buffer size for marshalled context: was 0x%x, needed 0x%x
+Failed to insert context: 0x%x
+Pku2uExportContext context %p, flags 0x%x
+Invalid handle supplied for ExportSecurityContext(%p)n
+Pku2uExportContext returned 0x%x
+KERB_WRAP_NO_ENCRYPT flag passed to MakeSignature!
+WSTMakeSignatureToken CFX buffer too small %d, expected %d!
+Making signature buffer (encrypt = %d) with nonce 0x%I64x
+bad token header
+bad token id in the header
+token header too small
+bad EC in token header
+bad filler
+unexpected etype %d
+Failed to load %d crypt system: %#x
+Verifying signature buffer (decrypt = %d) with nonce 0x%I64x, message seq  0x%I64x
+sequence number mismatched
+message not sent by acceptor
+Can't have readonly & readonly_w_checksum
+d:\w7rtm\ds\security\protocols\pku2u\message.cxx
+No signature buffer found. %s, line %d
+no signing context attributes %#x, %s, line %d
+Failed to load %d checksum: 0x%x.
+no signing %#x, %s, line %d
+Failed to verify signature token: %#x
+Failed to load MD5 checksum: %#x
+--
+52b8
+6.1ec7
+6.1.7600.16385
+6.1.7601.17514
+amd64_prnep00c.inf-languagepack_31bf3856ad364e35_en-us_ae7e2002e7b07590_
+6.1.7600.16385
+amd64_infocard.resources_b77a5c561934e089_en-us_871b4a18f02ce36b
+6.1;J
+6.1.7600.16385
+.163Q
+amd64_microsoft-windows-runonce.resources_31bf3856ad364e35_en-us_0de22e9b21d3169d
+6.1;J
+6.1.7600.16385
+x86_microsoft-windows-utilman.resources_31bf3856ad364e35_en-us_b05f80e3084dfe57e
+6.1.7600.16385
+amd64_microsoft-windows-x..ocess-mui.resources_31bf3856ad364e35_en-us_6362399dc0d89d8fgu
+6.1.7600.16385
+x86_microsoft-windows-d..monapijpn.resources_31bf3856ad364e35_en-us_e76012d0f368ef56.res
+6.1.7600.16385
+amd64_microsoft-windows-autoconv.resources_31bf3856ad364e35_en-us_5b4f50a6f6e12ed8ns.res
+6.1.7600.16385
+--
+x86_microsoft-windows-w..deviceapi.resources_31bf3856ad364e35_en-us_8c55ef87314b660c0
+6.1.7600.16385!
+amd64_microsoft-windows-s..repairbde.resources_31bf3856ad364e35_en-us_93f9bd8caf032bc2l
+6.1.7600.16385i
+E8EBCC90469BFE03EA485673BA14799F
+tSDisplayVersion
+x86_microsoft-windows-d..layswitch.resources_31bf3856ad364e35_en-us_1b2e34af3cbd7a77i
+6.1.7600.16385N
+amd64_microsoft-windows-m..ado15-rll.resources_31bf3856ad364e35_en-us_e38f58e3870a40afu
+6.1.7600.16385l
+x86_microsoft-windows-runonce.resources_31bf3856ad364e35_en-us_b1c393176975a567
+6.1.7600.16385
+hbin
+x86_microsoft-windows-msinfo32-exe.resources_31bf3856ad364e35_en-us_619ad638a159cb5dc
+6.1.7600.163856
+amd64_microsoft.backgroun..nt.module.resources_31bf3856ad364e35_en-us_b9460b755ccbf21fi
+6.1.7600.16385r
+6.1.7600.16385
+System.Web.Extensions.Design,3.5.0.0,,31bf3856ad364e35,msil
+amd64_microsoft-windows-i..tbranding.resources_31bf3856ad364e35_en-us_70994e2bce689b50,
+11.2.9600.16428
+]0;root@kali: ~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[01;31mroot@kali[00m:[01;34m~/Documents/CTF-Writeups/Chaos/Forensics/FlagConverter[00m# exit
+
+Script done on 2019-08-23 08:51:26-04:00 [COMMAND_EXIT_CODE="0"]

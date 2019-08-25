@@ -1,0 +1,14 @@
+core-pwn
+
+Category: Pwn
+Difficulty: Easy/Medium
+Author: 0x4d5a
+First Blood: OpenToAll
+
+We heard the .NET framework is secure and stuff. Nothing can go wrong, it's a memory safe language! Really. Nothing.
+
+Built with dotnet publish --runtime ubuntu.18.04-x64 and executed in a docker container: FROM mcr.microsoft.com/dotnet/core/aspnet:2.1.12-bionic
+
+nc hax.allesctf.net 1234
+
+core-pwn.zip

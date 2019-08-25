@@ -1,0 +1,12 @@
+Power
+
+Category: Crypto
+Difficulty: Easy
+Author: black-simon
+First Blood: RedGKFRocket
+
+RSA is to boring. Raise to the power of x instead.
+
+power.py
+
+nc hax.allesctf.net 1337

@@ -1,0 +1,27 @@
+Keychain
+
+Category: Pwn
+Difficulty: Premium (i.e. really hard)
+Author: LinHe
+
+We've found parts of the source code of a keychain backdoor that has been installed by Kim Jong-un's Agents on Donald Trump's computer. As we're interested in getting Trump's Twitter password, we would like you to find out what the backdoor does and how it can be exploited.
+
+The source code can be found here.
+
+Once you got a working exploit, please:
+
+    Send an IRC message to LinHe with a URL to your exploit and
+    Call Linus: Extension: AAPL (2275) or wait
+
+Hints:
+
+    The source code is for a program that patches something in securityd.
+    The flag can be found in the keychain. It is a standard Internet Password with the Name/Account set to @realdonaldtrump. (Or just dump the whole keychain)
+    This or this might help you.
+    Our VM is running macOS 10.14.6 (i.e. the latest version of macOS).
+    The VM is not connected to the internet.
+    You will need to find a 0day.
+
+https://youtu.be/wPd6rMk8-gg
+https://objectivebythesea.com/v2/talks/OBTS_v2_Henze.pdf
+

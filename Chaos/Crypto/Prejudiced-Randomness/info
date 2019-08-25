@@ -1,0 +1,23 @@
+Prejudiced Randomness 1
+
+Category: Crypto
+Difficulty: Easy/Medium
+Author: Th0mas
+
+I found new uber crypto that allows us to securely generate random numbers! Lets use this to play a very fair game of random chance. Win the game!
+
+nc hax.allesctf.net 7331
+
+challenge.py
+
+Prejudiced Randomness 2
+
+Category: Crypto
+Difficulty: Hard
+Author: Th0mas
+
+Since this game is random, losing should be just as easy as winning, right?
+
+nc hax.allesctf.net 7331
+
+challenge.py

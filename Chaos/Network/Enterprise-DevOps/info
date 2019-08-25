@@ -1,0 +1,42 @@
+Enterprise DevOps 1
+
+Category: Systems / Network
+Difficulty: Easy
+Author: leoluk
+First Blood: flexerilla
+
+After compromising the left-pad NPM package by guessing the author's NPM credentials (which happened to be the name of his cat, Lucy), you ended up with a shell somewhere deep inside a random company's continuous integration infrastructure.
+
+Your goal is to escalate your privileges through this multi-stage challenge and pivot through the company network. Each stage of the challenge has its own flag - this is part 1.
+
+See more details on the dedicated challenge page: https://devops.allesctf.net/
+
+Your session is stateful. Please share it with your team members - we have limited capacities. Terminate it unless you're currently working on it.
+
+The flag format is different for this challenge.
+
+Enterprise DevOps 2
+
+Category: Systems / Network
+Difficulty: Easier than you think
+Author: leoluk
+Dependencies: Enterprise DevOps 1
+
+See more details on the dedicated challenge page: https://devops.allesctf.net/
+
+Your session is stateful. Please share it with your team members - we have limited capacities. Terminate it unless you're currently working on it.
+
+The flag format is different for this challenge.
+
+Enterprise DevOps 3
+
+Category: Systems / Network
+Difficulty: Hard
+Author: leoluk
+Dependencies: Enterprise DevOps 1, Enterprise DevOps 2
+
+See more details on the dedicated challenge page: https://devops.allesctf.net/
+
+Your session is stateful. Please share it with your team members - we have limited capacities. Terminate it unless you're currently working on it.
+
+The flag format is different for this challenge.

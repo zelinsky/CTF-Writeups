@@ -1,0 +1,10 @@
+WillNotCry
+
+Category: Reverse Engineering
+Difficulty: Easy/Medium
+Author: Informator
+First Blood: cockmasters
+
+Your company was confronted with the truth of a ransomware that encrypted precious files. Unfortunately, the backup is only moved to cold-storage once a day. The newest backup of the password database is encrypted.
+
+Find the flag in the newest password database backup.

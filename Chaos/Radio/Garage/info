@@ -1,0 +1,39 @@
+Garage
+
+Category: Radio
+Difficulty: Hard
+Author: explo1t
+
+In order to safeguard their flags, the ALLES team has brought their secure storage garages to the camp. They can be opened remotely with transmitters, using military-grade encryption™. We heard about security issues with similar products, but according to the manufacturer, their garages are secure! Phew.
+
+Only a small number of highly trusted team members carry the transmitters. Unfortunately, one of them got drunk on Tschunk and a transmitter for one of the garages ended up in enemy hands.
+
+You got hold of the remote control and can press the button: http://hax.allesctf.net:8080
+
+Can you raid the second flag vault?
+
+The following parameters might help you:
+
+    Symbol Duration: 512u
+    Sample Rate: 200k
+    Frequency: 433.920 MHz
+
+The signal is transmitted near Dragon Sleep Pwn Sector (each signal 10 times, bc transmission errors). You can either connect to our remote receiver, or receive the signal locally using the SDR of your choice. For transmitting your solution, please use our submission queue which will allocate a time slot, transmit your signal and provide you with a video feed of the garage.
+
+You cannot physically access the garages.
+
+Update: Contact explo1t on IRC if you believe you have a working exploit.
+
+Update2: New client with increase performance. Increased disconnection time, if no ping (now 120s).
+
+Hint 1: Here is a full Challenge-Response from Garage 1 (The one you can open via the webinterface)
+Remote transceiver: garage-e9cfbc3da45f4dd32c3ce3e98e141422830a8460d10a44e8388be53e27e13e41.zip
+Hint 2: Challenge Message Format:
+
+2Bit Garage ID
+
+5Bit Rolling Code (minutes%30)
+
+101010 Static
+
+12Bit Random (static until challenge solved)

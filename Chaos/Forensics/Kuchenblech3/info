@@ -1,0 +1,11 @@
+kuchenblech3
+
+Category: Forensics
+Difficulty: Medium
+Author: localo & A2nkF
+
+The mafia is using CS:GO to communicate secretly. They are talking about some flag but we don't know what to look for. We managed to intercept parts of their communication. Can you make some sense out of this and get this flag?
+
+traffic.pcap
+
+Hint 1: The original filename was 31_07_2019.pcap
