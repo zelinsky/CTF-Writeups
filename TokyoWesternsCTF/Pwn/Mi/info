@@ -1,0 +1,11 @@
+ mi
+Problem
+
+I defeated Microsoft, what about you?
+mi.chal.ctf.westerns.tokyo 10001
+
+mi
+libmimalloc.so
+libc.so.6
+
+( I cloned the latest code at that time(3f43cbe6a) and built with MI_CHECK_FULL=ON )

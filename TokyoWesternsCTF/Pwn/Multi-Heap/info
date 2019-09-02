@@ -1,0 +1,9 @@
+ Multi Heap
+Problem
+
+multi means a lot. heap means crap. So that means...?
+
+nc multiheap.chal.ctf.westerns.tokyo 10001
+
+multi_heap
+libc.so.6

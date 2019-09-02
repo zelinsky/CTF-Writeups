@@ -1,0 +1,12 @@
+ gnote
+Problem
+
+My note.
+ssh gnote@gnote.chal.ctf.westerns.tokyo (PW: ywhywaita )
+
+rootfs.cpio
+run.sh
+bzImage
+gnote.c
+
+( Outbound connections are allowed. You can wget your exploit. )

@@ -1,0 +1,9 @@
+ Asterisk-Alloc
+Problem
+
+heap is fun.
+
+nc ast-alloc.chal.ctf.westerns.tokyo 10001
+
+asterisk_alloc
+libc.so.6

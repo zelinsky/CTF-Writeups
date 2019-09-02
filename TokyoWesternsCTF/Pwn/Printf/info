@@ -1,0 +1,10 @@
+ printf
+Problem
+
+my printf is next-standard printf.
+
+nc printf.chal.ctf.westerns.tokyo 10001
+
+printf
+libc.so.6
+ld-linux-x86-64.so.2

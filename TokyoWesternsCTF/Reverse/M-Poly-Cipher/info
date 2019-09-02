@@ -1,0 +1,7 @@
+ M-Poly-Cipher
+Problem
+
+./cipher create-key public.key private.key
+./cipher encrypt public.key flag.txt flag.enc
+
+m-poly-cipher.7z
