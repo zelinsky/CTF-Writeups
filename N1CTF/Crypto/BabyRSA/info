@@ -1,0 +1,14 @@
+Part3-BabyRSA
+Crypto 1000pt
+
+The plaintext space in TokyoWesterns CTF real-baby-rsa challenge is too small,
+
+so I decide to add some random padding to the plaintext to prevent bruteforce attack.
+
+Hope this padding can prevent the hackers. XD
+
+attachment：https://share.weiyun.com/5DMLSFC password：hujqnt
+
+or
+
+https://drive.google.com/file/d/1FNPT90x-rGhUwAKR5b18jnwMvHG91vgW/view?usp=sharing
