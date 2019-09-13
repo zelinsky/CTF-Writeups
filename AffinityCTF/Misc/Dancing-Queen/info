@@ -1,0 +1,6 @@
+Dancing Queen
+250
+
+...greetings from Sweden...
+
+Note: gzip -d dancing_queen.tar.gz; docker import dancing_queen.tar dancing:queen ; docker run -i -t dancing:queen /bin/sh
